@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>join</title>
+    <link rel="stylesheet" th:href="@{/css/member/join.css}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script th:src="@{/js/member/join.js}" defer></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script th:src="@{/js/map/address.js}" defer></script>
+</head>
+<body>
+<!--<div th:replace="~{/fragments/common/header :: headerFragment}"></div>-->
+<div class="join">
+    <div class="join-con">
+        <h1 class="logo"><a th:href="@{/index}"><img th:src="@{/images/logo.png}" alt="logo"></a></h1>
+        <ul class="joinWhat">
+            <li class="member"><a th:href="@{/member/join}">구매자</a></li>
+            <li class="seller"><a th:href="@{/member/joinSeller}">판매자</a></li>
+        </ul>
+        <div class="join-form">
+            <form th:action="@{/member/join}" method="POST" th:object="${memberDto}">
+                <h1 class="title">회원가입</h1>
+                <ul>
+                    <li>
+                        <label for="email">email</label>
+                        <input type="email" name="email" id="email" placeholder="이메일입력">
+                        <input type="button" name="emailChkBtn" id="emailChkBtn" value="emailChkBtn">
+                    </li>
+                    <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="error"></p>
+
+
+                    <li>
+                        <label for="userPw">userPw</label>
+                        <input type="text" name="userPw" id="userPw" placeholder="비밀번호입력">
+                    </li>
+
+
+                    <p th:if="${#fields.hasErrors('userPw')}" th:errors="*{userPw}" class="error"></p>
+
+
+                    <li>
+                        <label for="name">userName</label>
+                        <input type="text" name="name" id="name" placeholder="이름입력">
+                    </li>
+
+
+                    <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="error"></p>
+
+
+                    <li>
+                        <label for="nickName">nickName</label>
+                        <input type="text" name="nickName" id="nickName" placeholder="닉네임입력">
+                    </li>
+
+
+                    <p th:if="${#fields.hasErrors('nickName')}" th:errors="*{nickName}" class="error"></p>
+
+
+                    <li>
+                        <label>성별</label>
+                        <input type="radio" id="male" name="gender" value="M" checked/>
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="F"/>
+                        <label for="female">Female</label>
+                    </li>
+
+
+                    <p th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}" class="error"></p>
+
+
+                    <li>
+                        <label for="mainAddress">address</label>
+                    <li class="address one">
+                        <input type="text" id="postcode" placeholder="우편번호">
+                        <input type="button" onclick="execDaumPostcode()" value="우편번호 찾기">
+                    </li>
+                    <li class="address two">
+                        <input type="text" id="mainAddress" placeholder="주소">
+                        <input type="text" id="detailAddress" placeholder="상세주소">
+                        <input type="text" id="extraAddress" placeholder="참고항목">
+                    </li>
+                    <input type="hidden" name="address" id="address">
+                    </li>
+
+
+                    <p th:if="${#fields.hasErrors('address')}" th:errors="*{address}" class="error"></p>
+
+
+                    <li>
+                        <label for="note">content</label>
+                    </li>
+                    <li>
+                        <textarea name="note" id="note" cols="80" rows="10"></textarea>
+                    </li>
+
+                    <!--                <li>-->
+                    <!--                    <label for="number">number</label>-->
+                    <!--                    <input type="text" name="number" id="number" placeholder="번호입력">-->
+                    <!--                </li>-->
+
+                    <!--                <li class="class2">-->
+                    <!--                    <label for="number">핸드폰번호</label>-->
+                    <!--                    <div class="right">-->
+                    <!--                        <select name="number" id="number" class="number">-->
+                    <!--                            <option value="">::선택::</option>-->
+                    <!--                            <option value="010">010</option>-->
+                    <!--                            <option value="011">011</option>-->
+                    <!--                            <option value="012">012</option>-->
+                    <!--                        </select> - -->
+                    <!--                        <input type="text" name="number" class="number" maxlength="4">-->
+                    <!--                        <input type="text" name="number" class="number" maxlength="4">-->
+                    <!--                    </div>-->
+                    <!--                </li>-->
+                    <li>
+                        <label>전화번호</label>
+                        <input type="text" name="number" id="number" placeholder="번호입력" maxlength="13">
+                    </li>
+
+
+                    <li class="last">
+                        <input type="reset" value="초기화">
+                        <input type="submit" value="회원가입">
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+</div>
+<div th:replace="~{/fragments/common/footer :: footerFragment}"></div>
+</body>
+</html>

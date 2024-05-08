@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<div class="container" th:fragment="sellFragment">
+    <div class="detail">
+        <div class="detail-con">
+            <div class="top">
+                <div class="detail-form">
+                    <form th:action="@{/shop/update}" method="post" enctype="multipart/form-data">
+                        <div class="left">
+                            <div class="left-con">
+                                <th:block th:if="${shop.isImage==1}">
+                                    <img th:src="@{|/upload/${shop.newFileName}|}" alt="이미지대체문구">
+                                </th:block>
+                                <th:block th:unless="${shop.isImage==1}">
+                                    <img src="https://placehold.co/400x500?text=NOIMAGE" alt="이미지대체문구">
+                                </th:block>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>
+                                <button type="button" class="btn btn_good">
+                                    <img th:src="@{/images/shop/good.png}" alt="좋아요">
+                                </button>
+                                <span th:text="${shop.good}" id="good" name="good"></span>
+                                <img th:src="@{/images/shop/hit.png}" alt="조회수">
+                                <span th:text="${shop.hit}" id="hit" name="hit"></span>
+                            </li>
+                            <li>
+                                <!--                <input type="text" name="title" id="title" th:value="${shop.title}">-->
+                                <span th:text="${shop.title}" name="title" id="title"></span>
+                            </li>
+                            <li>
+                                <!--                <input type="text" name="price" id="price" th:value="${shop.price}"> 원-->
+                                <span th:text="${shop.price}" name="price" id="price"></span> 원
+                            </li>
+                            <br>
+                            <li>
+                                작성일: <span th:text="${#temporals.format(shop.createTime, 'yyyy년-MM월-dd일 ')}"
+                                           id="createTime"></span>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+
+            <div class="contents">
+                <div class="contents-con">
+                    <li>
+                        <textarea cols="110" rows="90" id="content" name="content" th:text="${shop.content}"></textarea>
+                    </li>
+
+
+                    <div class="content-right">
+
+                        <a th:href="@{/shop/cart/{id}(id=${shop.id})}">장바구니</a>
+                    </div>
+
+
+                </div>
+
+
+                <div class="post">
+                    <div class="post-area">
+                        <button type="button" class="btn btn_good">
+                            <img th:src="@{/images/shop/good.png}" alt="좋아요">
+                        </button>
+                        <span th:text="${shop.good}" id="good" name="good"></span>
+
+                        <button type="button" class="btn btn_bad">
+                            <img th:src="@{/images/shop/bad.png}" alt="싫어요">
+                        </button>
+                        <span th:text="${shop.bad}" id="bad" name="bad"></span>
+
+                    </div>
+                </div>
+                <ul>
+                    <li>
+                        <label for="address">공장 출저</label>
+                        <input type="hidden" name="address" id="address" th:value="${shop.address}"/>
+                        <p style="margin-top:-12px">
+                            <em class="link">
+                                <a href="javascript:void(0);"
+                                   onclick="window.open('http://fiy.daum.net/fiy/map/CsGeneral.daum', '_blank', 'width=981, height=650')">
+                                </a>
+                            </em>
+                        </p>
+                        <div id="map" style="width:100%;height:350px;"></div>
+                    </li>
+                </ul>
+                <div class="list">
+                    <a th:href="@{/shop/shopList}">목록</a>
+                </div>
+
+
+                <div class="bottom">
+                    <div class="reply">
+                        <div class="reply-con">
+                            <h1 class="title">REVIEW LIST</h1>
+                            <form th:action="@{/reply/shopReplyWrite}" method="POST">
+                                <input type="hidden" name="shopId" th:value="${shop.id}" readonly>
+                                <input type="text" name="replyContent" id="replyContent" placeholder="덧글내용">
+                                <input type="text" name="replyWriter" id="replyWriter" placeholder="작성자">
+                                <input type="submit" value="덧글작성">
+                            </form>
+                            <!--                        <table>-->
+                            <!--                            <thead>-->
+                            <!--                            <tr>-->
+                            <!--                                <th>댓글번호</th>-->
+                            <!--                                <th>회원번호</th>-->
+                            <!--                                <th>내용</th>-->
+                            <!--                                <th>닉네임</th>-->
+                            <!--                                <th>좋아요</th>-->
+                            <!--                                <th>싫어요</th>-->
+                            <!--                                <th>작성시간</th>-->
+                            <!--                                <th>수정시간</th>-->
+                            <!--                                <th>삭제</th>-->
+                            <!--                            </tr>-->
+                            <!--                            </thead>-->
+                            <!--                            <tbody>-->
+                            <!--                            <tr th:each="reply: ${shopReplyList}"> &lt;!&ndash; reply.getshopEntity().getId() &ndash;&gt;-->
+                            <!--                                <td th:text="${reply.id}">번호</td>-->
+                            <!--                                <td th:text="${reply.shopEntity.id}"></td>-->
+                            <!--                                <td th:text="${reply.content}"></td>-->
+                            <!--                                <td th:text="${reply.nick}"></td>-->
+                            <!--                                <td th:text="${reply.good}"></td>-->
+                            <!--                                <td th:text="${reply.bad}"></td>-->
+                            <!--                                <td th:text="${#temporals.format(reply.createTime, 'yyyy년-MM월-dd일 HH시:mm분')}"></td>-->
+                            <!--                                <td th:text="${#temporals.format(reply.updateTime, 'yyyy년-MM월-dd일 HH시:mm분')}"></td>-->
+
+                            <!--                                <td><a th:href="@{/reply/replyDelete/{id}/shop/{shopId}(id=${reply.id},shopId=${reply.shopEntity.id})}">삭제</a></td>-->
+                            <!--                            </tr>-->
+                            <!--                            </tbody>-->
+                            <!--                        </table>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</html>

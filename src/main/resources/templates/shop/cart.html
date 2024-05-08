@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+>
+<head>
+  <meta charset="UTF-8">
+  <title>글상세</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script th:src="@{/js/shop/cart.js}" defer></script>
+  <script th:src="@{/js/shop/cartUI.js}" defer></script>
+  <link rel="stylesheet" th:href="@{/css/shop/cart.css}">
+
+
+</head>
+<body>
+<div th:replace="~{/fragments/common/header :: headerFragment}"></div>
+
+<div class="container">
+  <div class="cart">
+    <div class="cart-con">
+      <table>
+        <thead>
+
+        <tr>
+          <th></th>
+          <th></th>
+          <th>상품명</th>
+          <th>상품번호</th>
+          <th>인원</th>
+          <th>가격</th>
+          <th>판매자</th>
+          <th>비우기</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="shop: ${shopList}">
+          <input type="text" th:value="${shop.id}" id="cartId" hidden>
+          <td>
+            <input type="checkbox" class="item" name="item">
+          </td>
+          <td>
+            </a>
+
+            <a th:href="@{/shop/sell/{id}(id=${shop.shopEntity.id})}">
+              <img th:if="${not #lists.isEmpty(shop.shopEntity.fileEntities)}"
+                   th:src="@{'/upload/' + ${shop.shopEntity.fileEntities[0]?.newFileName}}"
+                   alt="이미지">
+            </a>
+            <a th:href="@{/shop/sell/{id}(id=${shop.shopEntity.id})}">
+              <img th:if="${#lists.isEmpty(shop.shopEntity.fileEntities)}"
+                   src="https://placehold.co/400x400?text=NOIMAGE"
+                   alt="">
+            </a>
+          </td>
+
+          <td>
+            <a class="title" th:href="@{/shop/sell/{id}(id=${shop.shopEntity.id})}">[[${shop.shopEntity.title}]]</a>
+          </td>
+          <td th:text="${shop.shopEntity.id}" id="shopId" ></td>
+          <td th:text="${shop.count}" id="result" class="count"></td>
+          <td>
+            <span th:text="${shop.shopEntity.price}" class="price"></span> 원
+          </td>
+          <td th:text="${shop.shopEntity.shopMemberEntity.nickName}"></td>
+          <td class="cartDeleteImg">
+            <button type="button" class="cartDelete" id="cartDelete">
+              <img th:src="@{/images/shop/cartDelete.png}" alt="비우기">
+            </button>
+          </td>
+
+        </tr>
+        </tbody>
+      </table>
+      <div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div th:replace="~{/fragments/common/footer :: footerFragment}"></div>
+
+<div class="down">
+  <div class="pur">
+    <div class="pur-left">
+      <li>
+        <input type="checkbox" id="allCheck" class="allCheck"> 전체선택
+      </li>
+      <li>
+        총가격 : <span id="totalPrice">0</span>원
+      </li>
+    </div>
+    <input type="button" id="buyBtn" value="구매하기(1)" class="buyBtn">
+  </div>
+
+  <div class="buttonCap">
+    <button type="button" class="menu" id="menu">
+      <img th:src="@{/images/shop/menu.png}" alt="메뉴">
+    </button>
+    <button type="button" class="home" id="home" onClick="homeFn()">
+      <img th:src="@{/images/shop/home.png}" alt="홈">
+    </button>
+    <button type="button" class="back" id="back" onClick="backFn()">
+      <img th:src="@{/images/shop/back.png}" alt="뒤로가기">
+    </button>
+  </div>
+</div>
+
+
+
+
+</body>
+</html>
+

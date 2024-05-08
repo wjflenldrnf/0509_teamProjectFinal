@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<div class="menu" th:fragment="adminLeftFragment">
+
+  <label for="expand-menu"><div>메뉴</div></label>
+  <input type="checkbox" id="expand-menu" name="expand-menu"  style="display:none">
+  <ul>
+
+    <li><a th:href="@{/admin/member/memberList}"><div>회원목록</div></a></li>
+    <li><a th:href="@{/admin/shop/shopList}"><div>상품목록</div></a></li>
+    <li><a th:href="@{/shop/write}"><div>상품 등록</div></a></li>
+    <li><a th:href="@{/#}"><div>구매내역</div></a></li>
+    <li><a th:href="@{/#}"><div>추천목록</div></a></li>
+    <li><a th:href="@{/#}"><div>설정</div></a></li>
+
+    <li><a href="http://minsik0412.ncpworkplace.com">NaverApi</a></li>
+    <!--궁금한것-->
+
+  </ul>
+
+</div>
+
+</html>

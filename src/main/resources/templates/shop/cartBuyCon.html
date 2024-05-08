@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+>
+<head>
+  <meta charset="UTF-8">
+  <title>글상세</title>
+  <link rel="stylesheet" th:href="@{/css/shop/cartBuyCon.css}">
+</head>
+<body>
+<div th:replace="~{/fragments/common/header :: headerFragment}"></div>
+
+<div class="ghdqor">
+
+</div>
+<div class="container">
+  <div class="top">
+    <h1>예약을 축하드립니다!</h1>
+    <div class="continue">
+      <a th:href="@{/shop/shopList}">다른여행상품보기</a>
+    </div>
+  </div>
+</div>
+
+<li><br></li>
+<li><br></li>
+
+<div class="around">
+  <h1>추천여행지</h1>
+  <li><br></li>
+</div>
+<div class="grid">
+  <div class="product-grid">
+    <div class="product-item" th:each="shop : ${shopList}">
+      <div class="img">
+        <th:block th:if="${shop.isImage==1}">
+          <a th:href="@{/shop/sell/{id}(id=${shop.id})}">
+            <img th:src="@{|/upload/${shop.newFileName}|}" alt="이미지대체문구">
+          </a>
+        </th:block>
+        <th:block th:unless="${shop.isImage==1}">
+          <a th:href="@{/shop/sell/{id}(id=${shop.id})}">
+            <img src="https://placehold.co/400x500?text=NOIMAGE" alt="이미지대체문구">
+          </a>
+        </th:block>
+      </div>
+      <li><br></li>
+      <div class="title">
+        <a th:href="@{/shop/sell/{id}(id=${shop.id})}">[[${shop.title}]]</a>
+      </div>
+      <h3></h3>
+    </div>
+  </div>
+</div>
+<div th:replace="~{/fragments/common/footer :: footerFragment}"></div>
+</body>
+</html>
+

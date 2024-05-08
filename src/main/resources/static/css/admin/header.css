@@ -1,0 +1,120 @@
+/*header.css*/
+.header{
+  width: 100%;
+  display: flex;
+  justify-content: center; 
+  padding: 20px 10px;
+
+  /* border: 1px solid; */
+  box-sizing: border-box;
+}
+
+.header .nav{
+  /* flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 1400px; */
+  /* 최대 1400px, 1400px이하는 부모너비 100%*/
+flex: 0 1 1600px;
+
+box-sizing: border-box;
+
+display: flex;
+justify-content: space-between;
+
+}
+
+.header .nav .left-menu{
+
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  background: gray;
+}
+
+.header .nav .left-menu h1.logo{
+  width: 120px;
+  /* border: 1px solid; */
+  box-sizing: border-box;
+}
+.header .nav .left-menu h1.logo img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.header .nav .left-menu .search{
+  height: 60px;
+  border: 1px solid;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+
+}
+.header .nav .left-menu .search form{
+background-color: rgb(230, 217, 158); 
+border-radius: 15px;
+border: 1px solid #00ff00;
+height: 30px;
+padding: 0 10px;
+box-sizing: border-box;
+}
+
+.header .nav .left-menu .search form input{
+    border: 0;
+    border-radius: 5px;
+    font-size: 10px;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+  .header .nav .left-menu .search form input[type=submit]{
+    background: url('/images/logo.png') no-repeat 50%/cover;    
+    width: 30px;
+    height: 30px;
+    border: 0px;
+     cursor:pointer;
+     outline: 0;
+
+  }
+
+.header .nav .left-menu .hot{
+  width: 300px;
+  height: 60px;
+  background-color: #c8ff00;
+  overflow: hidden;
+
+  /*자식컨텐츠의 위치 중심*/
+  position: relative;
+
+
+}
+.header .nav .left-menu .hot ul{
+  width:100%;
+  height: inherit;
+    display:flex;
+
+}
+.header .nav .left-menu .hot ul li{
+  width:100%;
+  line-height: 60px;
+  text-align: center;
+}
+
+.header .nav .right-menu{
+  /* border: 1px solid; */
+  box-sizing: border-box;
+}
+
+.header .nav .right-menu ul{
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;  
+}
+.header .nav .right-menu ul li{
+  color:red;
+  /* border: 1px solid; */
+  box-sizing: border-box;
+  line-height: 60px;
+  padding:0 10px;
+}

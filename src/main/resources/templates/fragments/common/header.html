@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<div class="header" th:fragment="headerFragment">
+    <div class="header-top">
+        <div class="header-top-con">
+            <th:block sec:authorize="isAuthenticated()">
+                <a th:href="@{/member/logout}">로그아웃</a>
+            </th:block>
+            <th:block sec:authorize="isAnonymous()">
+                <a th:href="@{/member/login}">로그인</a>
+                <a th:href="@{/member/join}">회원가입</a>
+            </th:block>
+
+            <th:block sec:authorize="isAuthenticated()">
+                <a th:href="@{/shop/cartList}">장바구니</a>
+                <a th:href="@{/member/detail/{id}(id=${#authentication.principal.memberEntity.id})}">내정보</a>
+            </th:block>
+        </div>
+    </div>
+    <div class="nav">
+        <div class="left-menu">
+            <h1 class="logo"><a th:href="@{/index}"><img th:src="@{/images/logo.png}" alt="logo"></a></h1>
+            <div class="search">
+                <form action="">
+                    <input type="text" name="search" id="search" placeholder="검색어를 입력해주세요">
+                    <input type=submit value="" style="background-color:transparent;  border:0px ">
+                </form>
+
+                <div class="search-sub off">
+                    <div class="head">
+                        추천검색어
+                        <span class="close">X</span>
+                    </div>
+                    <ul>
+                        <li><a th:href="@{/shop/shopList}">#이렇게나 다양한 나트랑에 가달랏!</a></li>
+                        <li><a th:href="@{/shop/shopList}">#두근두근 반짝이는 몽골의 별밤 보러가요</a></li>
+                        <li><a th:href="@{/shop/shopList}">#겨울과 봄 사이, 알펜루트 설벽여행</a></li>
+                        <li><a th:href="@{/shop/shopList}">#매혹의 스페인&대서양을 품은 포르투갈 깊이보기</a></li>
+                        <li><a th:href="@{/shop/shopList}">#지구 반대편, 호주 뉴질랜드를 여행해요</a></li>
+                        <li><a th:href="@{/shop/shopList}">#아름다운 신비의 섬 울릉도 </a></li>
+                    </ul>
+                </div>
+            </div>
+            <script th:src="@{/js/common/header.js}"></script>
+
+
+            <div class="hot">
+                <div class="hot-con" id="popularRankList">
+                    <ul id="popularRankItems">
+                        <li><span th:text="인기순위"></span></li>
+                        <li th:each="shop, index : ${hotList}">
+                            <a th:href="@{'/shop/sell/' + ${shop.id}}">
+                                <span class="w-space"> [[${index.index +1}]]등 [[${shop.title}]]</span>
+                                <!--                                <span  class="w-space" th:text="${shop.title}"></span>-->
+                                <!--                                <span th:text="${shop.hit}"></span>-->
+                            </a>
+                        </li>
+                        <li><span th:text="인기순위"></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="right-menu">
+            <ul>
+
+                <th:block sec:authorize="hasAnyRole('ADMIN')">
+                    <li class="main">
+                        <a th:href="@{/admin}">admin</a>
+                        <ul class="bar">
+                            <li><a th:href="@{/admin/member/memberList}">member</a></li>
+                            <li><a th:href="@{/admin/shop/shopList}">shop</a></li>
+                        </ul>
+                    </li>
+                </th:block>
+                <li class="main">
+                    <a th:href="@{/board/pagingList}">Q&A</a>
+                    <ul class="bar">
+                        <li><a th:href="@{/board/write}">1:1문의</a></li>
+                        <li><a th:href="@{/board/pagingList}">질문</a></li>
+                    </ul>
+                </li>
+                <th:block sec:authorize="isAnonymous()">
+                </th:block>
+                <th:block sec:authorize="isAuthenticated()">
+                    <th:block sec:authorize="hasAnyRole('ADMIN','SELLER')">
+                        <li class="main"><a th:href="@{#}">shop</a>
+                            <ul class="bar">
+                                <li><a th:href="@{/shop/write}">write</a></li>
+                                <li><a th:href="@{/shop/shopList}">List</a></li>
+                            </ul>
+                        </li>
+                    </th:block>
+                    <!--&lt;!&ndash;                    <li class="main"><a th:href="@{#}">My</a>&ndash;&gt;-->
+                    <!--&lt;!&ndash;                        <ul class="bar">&ndash;&gt;-->
+                    <!--&lt;!&ndash;                            <li><a th:href="@{/member/detail}">내 정보</a></li>&ndash;&gt;-->
+                    <!--&lt;!&ndash;                            <li><a th:href="@{#}">장바구니</a></li>&ndash;&gt;-->
+                    <!--&lt;!&ndash;                        </ul>&ndash;&gt;-->
+                    <!--&lt;!&ndash;                    </li>&ndash;&gt;-->
+                    <!--                    <li><a th:href="@{/member/logout}">로그아웃</a></li>-->
+                </th:block>
+            </ul>
+
+        </div>
+    </div>
+</div>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script th:src="@{/js/shop/like.js}"></script>
+<div class="replyContainer" th:fragment="replyFragment">
+                    <div class="reply">
+                        <div class="reply-con">
+                            <h1 class="title">REVIEW LIST</h1>
+                            <form th:action="@{/reply/replyWrite}" method="POST">
+                                <!--<input type="hidden" name="shopId" th:value="${shop.id}" readonly>-->
+                                <input type="hidden" name="id" id="id" th:value="${shop.id}" readonly>
+                                <input type="text" name="replyContent" id="replyContent" placeholder="덧글내용">
+                                <input type="text" name="nick" id="nick" th:value="${shop.shopMemberEntity.nickName}">
+                                <input type="button" value="덧글작성" id="replyBtn">
+                            </form>
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>댓글번호</th>
+                                    <th>내용</th>
+                                    <th>닉네임</th>
+                                    <th>좋아요</th>
+                                    <th>싫어요</th>
+                                    <th>작성시간</th>
+                                    <th>삭제</th>
+                                    <!--                  <th>삭제</th>-->
+                                </tr>
+                                </thead>
+                                <tbody class="tData">
+                                <!--                <tr th:each="reply: ${shopReplyList}">-->
+                                <!--                  <input type="hidden" name="replyId" id="replyId" th:value="${reply.id}">-->
+                                <!--                  <td th:text="${reply.id}">번호</td>-->
+                                <!--                  <td th:text="${reply.content}"></td>-->
+                                <!--                  <td th:text="${reply.nick}"></td>-->
+                                <!--                  <td th:text="${reply.good}"></td>-->
+                                <!--                  <td th:text="${reply.bad}"></td>-->
+                                <!--                  <td th:text="${#temporals.format(reply.createTime, 'yyyy년-MM월-dd일 HH시:mm분')}"></td>-->
+                                <!--                  <td><input th:type="button" id="replyDeleteBtn" name="replyDeleteBtn" value="ajax삭제"></td>-->
+                                <!--&lt;!&ndash;                  <td><input th:type="button" id="replyDeleteBtn2" name="replyDeleteBtn2" value="삭제"></td>&ndash;&gt;-->
+                                <!--                </tr>-->
+                                </tbody>
+
+
+                            </table>
+                        </div>
+
+
+
+
+                    </div>
+</div>
+</html>

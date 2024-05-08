@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>회원 memberList</title>
+    <link rel="stylesheet" th:href="@{/css/member/memberList.css}">
+</head>
+<body>
+<div th:replace="~{/fragments/common/header :: headerFragment}"></div>
+
+<div class="container">
+
+    <div class="memberList">
+        <div class="memberList-con">
+            <div class="top">
+
+                <h1 class="title">회원목록</h1>
+
+                <div class="search">
+                    <form th:action="@{/member/memberList}" method="get">
+                        <select name="subject" id="subject">
+                            <option value="email">email</option>
+                            <!--                        <option value="name">name</option>-->
+                            <option value="role">role</option>
+                            <option value="address">address</option>
+                        </select>
+
+                        <input type="text" name="search" id="search">
+                        <input type="submit" value="검색">
+                    </form>
+
+                </div>
+
+                <table>
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>email</th>
+                        <th>userPw</th>
+                        <th>name</th>
+                        <th>nickName</th>
+                        <th>gender</th>
+                        <th>address</th>
+                        <th>note</th>
+                        <th>number</th>
+
+                        <th>role</th>
+                        <th>createTime</th>
+                        <th>updateTime</th>
+                        <th>보기1</th> <!-- 게시글 상세보기 -->
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="member : ${pagingList}">
+                        <td th:text="${member.id}"></td>
+                        <td th:text="${member.email}" class="email"></td>
+                        <td th:text="${member.userPw}" class="userPw"></td>
+                        <td th:text="${member.name}"></td>
+                        <td th:text="${member.nickName}"></td>
+                        <td th:text="${member.gender}"></td>
+                        <td th:text="${member.address}"></td>
+                        <td th:text="${member.note}"></td>
+                        <td th:text="${member.number}"></td>
+                        <td th:text="${member.role}"></td>
+                        <td th:text="${member.createTime}" class="createTime"></td>
+                        <td th:text="${member.updateTime}" class="updateTime"></td>
+                        <td><a th:href="@{/member/detail/{id}(id=${member.id})}">보기</a></td><!-- 게시글 상세보기 -->
+
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="pagingList">
+        <div class="pagingList-con">
+            <div class="paging">
+                <ul>
+                    <li>
+                        <!-- 현재페이지가 첫번째 페이지이면 span표시 -->
+                        <span th:if="${pagingList.pageable.pageNumber+1 eq 1}" class="span0">START</span>
+                        <!-- 처음 페이지가 아니면 a -->
+                        <span th:unless="${pagingList.pageable.pageNumber+1 eq 1}">
+                                        <a th:href="@{/member/memberList(page=0)}" class="span1">처음</a>
+                                    </span>
+                    </li>
+                    <li>
+                        <!-- 이전페이지가 첫번째 페이지이면 span표시 -->
+                        <span th:if="${1==pagingList.pageable.pageNumber+1}" class="span0">PRE</span>
+                        <span th:unless="${1==pagingList.pageable.pageNumber+1}">
+                                        <!--itemList.pageable.pageNumber 현재페이지 -1 -->
+                                        <a th:href="@{/member/memberList(page=${pagingList.pageable.pageNumber-1})}"
+                                           class="span1">이전</a>
+                                    </span>
+                    </li>
+
+
+                    <!-- block -->
+                    <!-- 페이지 번호-->
+                    <li th:each="i: ${#numbers.sequence(startPage, endPage)}" class="block">
+                                <span th:if="${i == pagingList.pageable.pageNumber+1}" th:text="${i}"
+                                      class="now"></span>
+                        <a th:unless="${i == pagingList.pageable.pageNumber+1}"
+                           th:href="@{/member/memberList(page=${ i - 1})}" th:text="${i}"></a>
+                    </li>
+
+                    <li>
+                        <!-- 현재페이지가 마지막 페이지이면 span표시 -->
+                        <span th:if="${pagingList.totalPages ==pagingList.pageable.pageNumber+1}"
+                              class="span0">NEXT</span>
+                        <!-- 현재페이지가 마지막 페이지아니면 a 표시 현재페이지 +1 -->
+                        <span th:unless="${pagingList.totalPages ==pagingList.pageable.pageNumber+1}">
+                                        <a th:href="@{/member/memberList(page=${pagingList.pageable.pageNumber+1})}"
+                                           class="span1">디음</a>
+                                    </span>
+                    </li>
+                    <li>
+                        <!-- 현재페이지가 마지막 페이지이면 span표시 -->
+                        <span th:if="${pagingList.totalPages ==pagingList.pageable.pageNumber+1}"
+                              class="span0">END</span>
+                        <!-- 현재페이지가 마지막 페이지가 아니면 마지막 페이지로 이동 해라 a -->
+                        <span th:unless="${pagingList.totalPages ==pagingList.pageable.pageNumber+1}">
+                                        <a th:href="@{/member/memberList(page=${pagingList.totalPages-1})}"
+                                           class="span1">마지막</a>
+                                    </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div th:replace="~{/fragments/common/footer :: footerFragment}"></div>
+</body>
+</html>

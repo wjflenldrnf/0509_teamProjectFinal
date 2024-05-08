@@ -1,0 +1,228 @@
+@import url(../common/reset.css);
+@import url(../common/header.css);
+@import url(../common/footer.css);
+
+.index {
+  width: 100%;
+  background: url(/images/index.jpg) no-repeat 50%/cover;
+  filter: grayscale(100%);
+}
+
+.index .index-con {
+  width: 100%;
+  height: calc(100vh);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.index .index-con ul>li>a {
+  font-size: 32px;
+  color: #cccccc;
+}
+
+.index .index-con .main-form {
+  /*flex-basis: 450px;*/
+  flex-basis: auto;
+  /*height: 450px;*/
+  height: auto;
+  background-color: #ffffff;
+  padding: 30px;
+  box-sizing: border-box;
+  /*테두리 모양*/
+  border-radius: 20px 30px 20px 30px;
+  /*변화 시간 -> 애니메이션 효과*/
+  transition: all 0.5s;
+}
+
+/*마우스 오버 시 효과*/
+.index .index-con .main-form:hover {
+  background-color: #ffffff;
+  color: #cccccc;
+  /*폰트 그림자 효과*/
+  text-shadow: 1px 2px 2px #222222;
+  cursor: pointer;
+  /*태그 그림자 효과*/
+  box-shadow: 2px 2px 3px #000000;
+}
+
+
+.index .index-con .main-form a {
+  color: inherit;
+
+}
+
+
+.index .index-con .section.sec1 .con .autoGallery {
+  width: 100%;
+  height: inherit;
+  border: 1px solid;
+  box-sizing: border-box;
+
+  position: absolute;
+}
+
+.index .index-con .section.sec1 .con .autoGallery ul {
+
+  width: 100%;
+  height: inherit;
+
+}
+
+.index .index-con .section.sec1 .con .autoGallery ul li {
+  width: 100%;
+  height: inherit;
+
+  position: absolute;
+
+  border: 1px solid;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #ffffff;
+  font-size: 25px;
+
+  opacity: 0;
+  /*보이지마라*/
+  visibility: hidden;
+  /*보이지마라*/
+
+  transition: all 0.3s;
+  /* 0.3 초 동안 실행*/
+
+
+
+}
+
+.index .index-con .section.sec1 .con .autoGallery ul li:hover {
+
+  background-color: red;
+
+
+}
+
+.fadeIn {
+  opacity: 1 !important;
+  /* 보여라 */
+  visibility: visible !important;
+  /* 보여라 */
+
+}
+
+.index .index-con .section.sec1 .con .autoGallery ul li:nth-child(1) {
+
+  background: url(../images/sec1Bg_1.jpg) no-repeat 50%/cover;
+
+
+}
+
+.index .index-con .section.sec1 .con .autoGallery ul li:nth-child(2) {
+
+  background: url(../images/sec1Bg_2.jpg) no-repeat 50%/cover;
+}
+
+
+.index .index-con .section.sec1 .con .autoGallery ul li:nth-child(3) {
+  background: url(../images/sec1Bg_3.jpg) no-repeat 50%/cover;
+}
+
+.index .index-con .section.sec1 .con .autoGallery ul li:nth-child(4) {
+
+  background: url(../images/sec1Bg_4.jpg) no-repeat 50%/cover;
+
+
+}
+
+
+.index .index-con .section.sec1 .con .autoGallery ul li:nth-child(5) {
+
+  background: url(../images/sec1Bg_5.jpg) no-repeat 50%/cover;
+
+}
+
+
+.index .index-con .section.sec1 .con .center-arrow {
+  width: 100%;
+  height: auto;
+
+  /* border: 1px solid firebrick; */
+  background-color: #ffffffd8;
+  box-sizing: border-box;
+  position: absolute;
+
+  /* 
+  top: 50%;
+  margin-top: -50px; */
+
+  padding: 0 10px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.index .index-con .section.sec1 .con .center-arrow span.arrow {
+
+  width: 30px;
+  height: 30px;
+
+  background-color: blue;
+
+  border-radius: 50%;
+
+}
+
+.index .index-con .section.sec1 .con .center-arrow span.arrow:hover {
+
+  background-color: tomato;
+  cursor: pointer;
+
+}
+
+.index .index-con .section.sec1 .con .items {
+
+  width: 100%;
+  height: auto;
+  padding: 10px 0;
+  background-color: #ffffff55;
+  /* border: 1px solid #ff0000; */
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+
+}
+
+.index .index-con .section.sec1 .con .items ul {
+
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.index .index-con .section.sec1 .con .items ul li {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #cccccc;
+
+}
+
+
+.footer {
+  width: 100%;
+  padding: 20px 0;
+  background-color: black;
+  color: antiquewhite;
+  font-size: 20px;
+  text-align: center;
+}
+
+.on {
+  background-color: red;
+}

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script th:src="@{/webjars/sockjs-client/sockjs.min.js}"></script>
+    <script th:src="@{/webjars/stomp-websocket/stomp.min.js}"></script>
+    <script th:src="@{/js/chat.js}"></script>
+    <link rel="stylesheet" th:href="@{/css/chat-bot.css}">
+    <script src="/js/fadeAutoGallery.js" defer></script>
+    <script src="/js/admin/ajax.js" defer></script>
+
+</head>
+<body>
+<div th:replace="~{fragments/common/header :: headerFragment}"></div>
+<hr style="border-width:1px 0 0 0; border-color:#fff;">
+
+<div class="container">
+    <div class="index">
+        <div class="index-con">
+
+
+            <div class="sections">
+
+                <div class="chat">
+
+                    <div id="chat-bot">
+                        <div class="wrap">
+                            <button type="button" id="btn-chat-open" onclick="openChat()">
+                                ChatBot
+                            </button>
+                            <dl id="chat-disp">
+                                <dt id="chat-header">
+                                    <span>챗봇</span>
+                                    <span class="btn-wrap">
+				<button type="button" id="btn-chat-close" onclick="disconnect()">X</button>
+			</span>
+                                </dt>
+                                <dd id="chat-content">
+
+                                </dd>
+                                <dd id="chat-question" class="flex between">
+                                    <span class="flex column center"><i></i></span>
+                                    <input type="text" id="question" placeholder="질문을 입력하세요">
+                                    <button type="button" id="btn-msg-send" onclick="msgSendClickFn()">전송</button>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="section sec1">
+                    <div class="con">
+                        <div class="autoGallery">
+                            <ul>
+                                <li class="fadeIn"></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="items">
+                            <ul>
+                                <li class="on"></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="search">
+                            <div class="title">
+                                어디로 떠나고 싶으세요?
+                            </div>
+                            <form th:action="@{/index/shopList}" method="get">
+                                <select name="subjectTwo" id="subjectTwo">
+                                    <option value="title">여행지를 입력해주세요</option>
+                                    <option value="content">내용을 검색해주세요</option>
+                                    <option value="price">가격을 입력해주세요</option>
+                                </select>
+                                <input type="text" name="searchTwo" id="searchTwo">
+                                <input type="submit" value="검색">
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="section sec2">
+                    <div class="con">
+
+                        <div class="title">
+                            <h1>여행을 좀아는 당신을 위해서..</h1>
+
+
+                        </div>
+                        <div class="content">
+                            <ul class="list-container">
+                                <!--                <a th:href="@{/pathvars/item/{itemId}/detail/{dtlId}(itemId = ${item.id}, dtlId = ${dtl.id})}">-->
+                                <!--                <li class="search" ><a th:href="@{/shop/shopList2/{search}(search='미국')}">미국</a></li>-->
+                                <li class="search"><a th:href="@{/shop/shopList2(search='미국')}">미국</a></li>
+                                <li class="search"><a th:href="@{/shop/shopList2(search='유럽')}">유럽</a></li>
+                                <li class="search"><a th:href="@{/shop/shopList2(search='아시아')}">아시아</a></li>
+                                <li class="search"><a th:href="@{/shop/shopList2(search='호주')}">호주</a></li>
+                                <li class="search"><a th:href="@{/shop/shopList2(search='기타')}">기타</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="shopList">
+
+                            <!-- grid 사용할 컨텐츠(li)의 부모에게 display:grid -> ul -->
+                            <div class="grid">
+                                <ul>
+                                    <li th:each="shop :${shopList}">
+                                        <div class="gird-con">
+
+                                            <div class="top">
+                                                <th:block th:if="${shop.isImage==1}">
+                                                    <a th:href="@{/shop/sell/{id}(id=${shop.id})}">
+                                                        <img th:src="@{|/upload/${shop.newFileName}|}" alt="이미지대체문구">
+                                                    </a>
+                                                </th:block>
+                                                <th:block th:unless="${shop.isImage==1}">
+                                                    <a th:href="@{/shop/sell/{id}(id=${shop.id})}">
+                                                        <img src="https://placehold.co/300x200?text=NOIMAGE"
+                                                             alt="이미지대체문구">
+                                                    </a>
+                                                </th:block>
+                                            </div>
+                                            <div class="bottom">
+                                                <ul>
+                                                    <li>
+                                                        <div class="item_title" th:text="${shop.title}"></div>
+                                                    </li>
+
+                                                    <li>
+                                                        <p class="item_content" th:text="${shop.content}"></p>
+                                                    </li>
+
+                                                    <li>
+                                                        <div class="item_price" th:text="${shop.price}"></div>
+                                                        <p class="price">원~</p>
+                                                        <hr style="border-width:1px 0 0 0; border-color:#fff;">
+                                                    </li>
+
+                                                    <div class="bottom_foot">
+
+                                                        <div class="bottom_good">
+                                                            <div class="bottom_good_1">
+                                                                <img th:src="@{/images/shop/good.png}" alt="좋아요">
+                                                                <span th:text="${shop.good}"></span>
+                                                            </div>
+                                                            <div class="bottom_good_2">
+                                                                <img th:src="@{/images/shop/hit.png}" alt="조회수">
+                                                                <span th:text="${shop.hit}" id="hit" name="hit"></span>
+                                                            </div>
+                                                        </div>
+
+
+                                                        <!-- 모달창-->
+                                                        <button class="item_detail"><a
+                                                                th:href="@{/shop/sell/{id}(id=${shop.id})}">보기</a>
+                                                        </button>
+
+                                                    </div>
+                                                </ul>
+
+
+                                            </div>
+
+
+                                        </div>
+                                    </li>
+                                </ul>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="index-bottom-section">
+    <ul class="bottom-section">
+        <li><a href="#">1:1문의</a></li>
+        <li><a href="#">견적 문의</a></li>
+        <li><a href="#">기업/단체 문의</a></li>
+        <li><a href="#">공지 사항</a></li>
+        <li><a href="#">더보기</a></li>
+    </ul>
+</div>
+<!---->
+<hr style="border-width:1px 0 0 0; border-color:#fff;">
+<div th:replace="~{fragments/common/footer :: footerFragment}"></div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+server:
+  port: 8095  # Server Port
+
+#Spring
+# Mysql settings
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver   # driver
+    url: jdbc:mysql://jmgrds.cpq8saaakf16.ap-northeast-2.rds.amazonaws.com/cicd1    # DB URL
+    username: "dgy6k"                                # user
+    password: "25414417"                   # password
+
+  # JPA settings
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update                           # DDL create,drop,update
+    properties:
+      hibernate:
+        show_sql: true                               # SQL show?
+        format_sql: true                             # SQL format
+
+  #Thymeleaf settings
+  thymeleaf:
+    prefix: classpath:/templates/     # view
+    suffix: .html                    # view( thymeleaf)
+    cache: false
+
+  #spring:  # oAuth2 ?? -> google, kakao, naver
+  profiles:
+    include: oauth2   # application-oauth2.yml
+
+
+  # CustomAuthenticationSuccessHandler, CustomAuthenticationFailureHandler
+  main:
+    allow-bean-definition-overriding: true
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type: trace
+
+filePath: file:///C:/openApi/saves/

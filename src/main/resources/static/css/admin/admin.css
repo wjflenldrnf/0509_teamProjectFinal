@@ -1,0 +1,120 @@
+@import url(/css/common/reset.css);
+@import url(/css/admin/adminheader.css);
+@import url(/css/admin/adminfooter.css);
+
+
+
+.admin .admin-con .sections .section.sec1{
+  width: 100%;
+  height: auto;
+
+}
+/* 
+가상 요소 - > 아이콘을 추가
+요소 내용 앞쪽에 새 컨텐츠를 추가 */
+
+
+
+.menu ::before{
+  font-family: 'Material Icons';
+  font-size: 1.5em;
+  float: left;
+  clear: left;
+}
+
+.menu label::before{ content:  '\e5d2';}
+.menu li:nth-child(1) a::before{ content: '\f02e';}
+.menu li:nth-child(2) a::before{ content: '\e8d6'; }
+.menu li:nth-child(3) a::before{ content: '\e88a'; }
+.menu li:nth-child(4) a::before{ content: '\e8cc'; }
+.menu li:nth-child(5) a::before{ content: '\e87d'; }
+.menu li:nth-child(6) a::before{ content: '\e8b8'; }
+
+/* 체크 박스 폼 요소 감춤 */
+
+#exand-menu { 
+  display: block;
+  height: auto;
+}
+
+#expand-menu:checked ~ ul {
+  display: block;
+  height: auto;
+
+}
+
+.menu {
+
+  display: block;
+  width: 220px;
+  height: 1600px;
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  /* 반응형 애니메이션용 */
+  overflow: hidden;
+  transition: all 0.5s ease;
+  font-size: 18px;
+  font-weight: 200;
+  position: fixed;
+}
+
+.menu a, .menu > label {
+
+  display: block;
+  height: 60px;
+  padding: 14px;
+  cursor: pointer;
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu a:hober {
+color: #000;
+
+}
+
+.menu ul li:hover, .menu > label:hover {
+  background-color: #fff;
+  color: #000;
+
+
+}
+
+.menu div {
+ line-height: 1.5;
+ font-size: 1em;
+ font-family: 'Noto Sans KR';
+ padding: 0 0 0 50px;
+
+}
+
+
+
+/* 체크박스가 체크되지 않은 상태(":not(:checked))") 
+일 때만 메뉴 목록이 감추어지도록 */
+
+
+@media screen and (max-width:1023px){
+  .menu {
+    width: 40px;
+
+  }
+  
+}
+
+@media screen and(max-widht:560px) {
+  .menu #expand-menu:not(:checked) ~ ul {
+    display: none;
+
+  }
+}
+
+.menu div {
+  position: absolute;
+  left: 50px;
+  line-height: 1.5;
+  font-size: lem;
+  font-family: 'Noto Sans KR';
+  padding: 0 0 0 20px;
+}

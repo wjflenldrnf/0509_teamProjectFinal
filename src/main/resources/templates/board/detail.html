@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>상세글페이지</title>
+    <link rel="stylesheet" th:href="@{/css/board/detail.css}">
+</head>
+<body>
+<div th:replace="~{/fragments/common/header :: headerFragment}"></div>
+<div class="container">
+    <div class="detail">
+        <div class="detail-con">
+            <h1>게시글상세보기</h1>
+            <form th:action="@{/board/update}" method="POST">
+                <ul>
+                    <li>
+                        <label>글번호</label> <input type="text" name="id" readonly th:value="${board.id}" >
+                    </li>
+                    <li>
+                        <label for="title">글제목</label> <input type="text" name="title" id="title"  th:value="${board.title}" >
+                    </li>
+                    <li>
+                        <label for="content">글내용</label>
+                    </li>
+                    <li>
+                        <textarea name="content" id="content" cols="30" rows="10"  th:value="${board.content}">[[${board.content}]]</textarea>
+                    </li>
+                    <li>
+                        <label for="writer">작성자</label>  <input type="text" name="writer"  id="writer" th:value="${board.writer}" >
+                    </li>
+
+                    <li>
+                        <label>작성시간:</label>   <span th:text="${board.createTime}"></span>
+                    </li>
+                    <li>
+                        <label>수정시간:</label> <span th:text="${board.updateTime}"></span>
+                    </li>
+
+                    <li>
+                        <input type="submit" value="게시글수정실행">
+                        <input type="reset" value="취소">
+                    </li>
+                </ul>
+            </form>
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<div th:replace="~{/fragments/common/footer :: footerFragment}"></div>
+</body>
+</html>

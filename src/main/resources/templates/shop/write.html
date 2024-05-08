@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>글작성</title>
+    <link rel="stylesheet" th:href="@{/css/shop/write.css}">
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script th:src="@{/js/map/address.js}" defer></script>
+</head>
+<body>
+
+<div th:replace="~{/fragments/common/header :: headerFragment}"></div>
+
+<div class="write-header">
+    <h1>상품등록</h1>
+</div>
+<div class="write">
+    <div class="write-con">
+        <div class="write-go">
+            <form th:action="@{/shop/write}" method="POST" enctype="multipart/form-data"
+                  th:object="${shopDto}">
+                <ul>
+                    <input type="hidden" name="memberId" id="memberId" th:value="${memberId}">
+                    <li>
+                        <select name="place" id="place">
+                            <option value="">::지역::</option>
+                            <option value="아시아">아시아</option>
+                            <option value="미국">미국</option>
+                            <option value="유럽">유럽</option>
+                            <option value="아프리카">아프리카</option>
+                            <option value="기타">기타</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label for="title">상품명</label>
+                        <input type="text" id="title" th:field="*{title}">
+                    </li>
+                    <p th:if="${#fields.hasErrors('title')}" th:errors="*{title}" class="error"></p>
+                    <li>
+                        <label for="content">내용</label>
+                        <textarea th:field="*{content}" id="content" cols="30" rows="10"></textarea>
+                    </li>
+                    <p th:if="${#fields.hasErrors('content')}" th:errors="*{content}" class="error"></p>
+                    <li>
+                        <label for="price">가격</label>
+                        <input type="text" th:field="*{price}" id="price">
+                    </li>
+                    <p th:if="${#fields.hasErrors('price')}" th:errors="*{price}" class="error"></p>
+
+                    <div class="address one">
+                        <label for="mainAddress">주소</label>
+                        <li>
+                            <input type="text" id="postcode" placeholder="우편번호" readonly>
+                            <input type="button" onclick="execDaumPostcode()" value="우편번호 찾기">
+                        </li>
+                    </div>
+
+                    <div class="address two">
+                        <label for="address">상세주소</label>
+                        <li>
+                            <input type="text" id="mainAddress" placeholder="주소" readonly>
+                            <input type="text" id="detailAddress" placeholder="상세주소">
+                            <input type="text" id="extraAddress" placeholder="참고항목" readonly>
+                        </li>
+                    </div>
+                    <li>
+                        <label for="address">↳</label>
+                        <input type="text" th:field="*{address}" id="address" readonly>
+                    </li>
+                    <div class="file">
+                        <li>
+                            <input type="file" name="shopFile" id="shopFile">
+                        </li>
+                    </div>
+                </ul>
+                <div class="ok">
+                    <li>
+                        <input type="submit" value="상품등록">
+                    </li>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+<div th:replace="~{/fragments/common/footer :: footerFragment}"></div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+>
+<head>
+  <meta charset="UTF-8">
+  <title>글상세</title>
+  <link rel="stylesheet" th:href="@{/css/shop/detail.css}">
+</head>
+<body>
+<div th:replace="~{/fragments/common/header :: headerFragment}"></div>
+
+<th:block sec:authorize="isAuthenticated()">
+
+  <div th:replace="~{/shop/fragments/detail/shopDetailFragment :: shopDetailFragment}"></div>
+</th:block>
+
+<!--<th:block sec:authorize="isAnonymous()">-->
+
+<!--    <div th:replace="~{/fragments/detail/board/shopDetailFragment2 :: detailFragment2}"></div>-->
+<!--</th:block>-->
+
+<div th:replace="~{/fragments/common/footer :: footerFragment}"></div>
+</body>
+</html>

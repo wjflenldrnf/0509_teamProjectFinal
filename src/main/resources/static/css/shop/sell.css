@@ -1,0 +1,629 @@
+@import url(/css/common/reset.css);
+@import url(/css/common/header.css);
+@import url(/css/common/footer.css);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+.container {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  width: 100%;
+}
+
+.detail {
+  list-style-type: none;
+  background-color: #ffffff;
+  width: 100%;
+  min-height: calc(100vh - 70px - 150px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail .detail-con {
+  background-color: #FAFAFA;
+  flex-basis: 1208px;
+  min-height: calc(100vh - 70px - 150px);
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+/*top*/
+.detail .detail-con .top {
+  width: 100%;
+  height: auto;
+}
+
+.detail .detail-con .top .detail-form {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ccc;
+}
+
+.detail .detail-con .top .detail-form form {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  border-radius: 30px 10px 10px 30px;
+}
+
+
+.left .left-con ul {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.left .left-con ul>li {
+  gap: 5px;
+  /*border:1px solid #cccccc;*/
+  box-sizing: border-box;
+  padding: 5px;
+
+}
+
+
+.left .left-con ul>li input {
+  flex: 3;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+
+.left .left-con ul>li textarea {
+  flex: 3;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+
+.left .left-con ul>li.last input {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 0 !important;
+  cursor: pointer !important;
+}
+
+.left .left-con ul>li span {
+  /*flex:3;*/
+  padding: 5px;
+  box-sizing: border-box;
+  justify-content: flex-end;
+
+}
+
+.left .left-con ul>li a {
+  border: 1px solid #000000;
+  flex: 1;
+  text-align: center;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+/*left*/
+
+.detail .detail-con .top .detail-form .left {
+  flex: 6;
+}
+
+.detail .detail-con .top .detail-form .left .left-con {
+  height: auto;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail .detail-con .top .detail-form .left .left-con img {
+  width: 600px;
+  height: 450px;
+  display: block;
+  object-fit: fill;
+  border: 5px solid #e9e7e7;
+  box-sizing: border-box;
+}
+
+/**/
+.detail .detail-con .top .detail-form ul {
+  flex: 6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.detail .detail-con .top .detail-form ul li {
+  gap: 10px;
+}
+
+.detail .detail-con .top .detail-form ul li:nth-child(1) {
+  display: flex;
+  padding: 10px 0;
+  justify-content: flex-end;
+  color: #000000;
+
+}
+
+.detail .detail-con .top .detail-form ul li:nth-child(2) {
+  font-size: 35px;
+  color: #000000;
+  font-weight: 600px;
+}
+
+.detail .detail-con .top .detail-form ul li:nth-child(3) {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.detail .detail-con .top .detail-form ul li:nth-child(3) span {
+  font-size: 35px;
+  color: #000000;
+  justify-content: flex-end;
+  font-weight: Bold;
+}
+
+.detail .detail-con .top .detail-form ul li:nth-child(4) {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 18px;
+  align-items: center;
+}
+
+.detail .detail-con .top .detail-form ul li:nth-child(5) a {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 18px;
+  align-items: center;
+  color: #007bff;
+}
+
+.detail .detail-con .top .detail-form ul li input[type=text] {
+  flex: 3;
+  text-indent: 5px;
+}
+
+
+.detail .detail-con .top .detail-form ul li input[type=submit] {
+  flex: 1;
+  padding: 8px;
+  box-sizing: border-box;
+  background-color: black;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.detail .detail-con .top .detail-form ul li:last-child {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.detail .detail-con .top .detail-form ul li:last-child .btn1 {
+  flex: 1;
+  display: block;
+  background-color: blueviolet;
+  color: #ffffff;
+  border: 0;
+  cursor: pointer;
+  text-align: center;
+  height: 30px;
+  font-size: 14px;
+
+}
+
+.detail .detail-con .top .detail-form ul li:last-child a {
+  line-height: 30px;
+}
+
+
+.contents {
+  width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.contents .contents-con {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.contents .contents-con textarea {
+  padding: 10px;
+  resize: none;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+
+.content-right {
+  width: 300px;
+  height: 450px;
+  position: sticky;
+  top: 0;
+  z-index: 998;
+  border-radius: 10px;
+  border: 1px solid #CED4DA;
+  background-color: #FAFAFA;
+
+
+}
+
+.content-right p {
+  display: flex;
+  font-size: 20px;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.content-right ul {
+  padding: 15px 5px;
+  line-height: 13px;
+}
+
+content-right p {
+  font-size: 20px;
+  color: #000000;
+}
+
+.content-right h3 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+.content-right ul>li:nth-child(1) {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.content-right ul>li:nth-child(9) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.content-right ul>li:nth-child(9) span {
+  font-weight: bold;
+  color: #009C75;
+  font-size: 35px;
+}
+
+
+.content-right ul>li:last-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+
+}
+
+.sum {
+  width: 40px;
+  height: 30px;
+  border: 1px solid;
+  border-radius: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.plusBtn {
+  width: 26px;
+  height: 26px;
+  border-radius: 30%;
+}
+
+.minusBtn {
+  width: 26px;
+  height: 26px;
+  border-radius: 30%;
+}
+
+.cartBtn {
+  width: 60px;
+  height: 52px;
+  background-size: cover;
+  border: 2px solid #D3DBD9;
+  background-color: #ffffff;
+}
+
+.a1 {
+  border: 1px solid;
+  color: #000000;
+  font-size: 20px;
+  align-items: center;
+}
+
+.a2 {
+  border: 1px solid;
+  background-color: #a2dfe6;
+  color: #ffffff;
+  font-size: 27px;
+  width: 200px;
+  height: 52px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border-radius: 8px;
+  font-weight: bold;
+
+}
+
+
+
+
+.post {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.post .post-area {
+  /*position: static;*/
+  /* display: inline-block;*/
+  /*  margin: 0 auto 33px;*/
+  padding: 17px 40px;
+  border: 1px solid #bababa;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btn {
+  width: 25px;
+  height: 22px;
+  border: 0;
+  cursor: pointer;
+  background-color: #ffffff;
+}
+
+.post .post-area span {
+  width: 20px;
+  height: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+.list {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+
+}
+
+.list a {
+  width: 150px;
+  height: 75px;
+  border: 1px solid #bababa;
+  font-size: 15px;
+  color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.update {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.update a {
+  width: 150px;
+  height: 75px;
+  border: 1px solid #bababa;
+  font-size: 15px;
+  color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+/* kakaoMap */
+
+.container .detail .detail-con .contents .map-con input.address {
+  margin-top: 5px;
+  color: gray;
+  font-size: 14px;
+  width: 100%;
+}
+
+.container .detail .detail-con .contents .map-con .marker {
+  padding-top: 10px;
+  margin: 10px;
+}
+
+.map-con input {
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 500px;
+  border: 0;
+}
+
+
+/*  reply */
+.reply-con {
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin: 10px;
+}
+
+.title {
+  text-align: center;
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+
+form {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.reply-con input[type="text"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 0;
+  box-sizing: border-box;
+}
+
+.replyNick {
+  font-weight: bold;
+}
+
+.replyContent {
+  width: 1150px;
+  height: 143px;
+}
+
+.reply123 {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+
+}
+
+#replyBtn {
+  padding: 10px 20px;
+  background-color: #ccc;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.replyBtn_good {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: url("/images/shop/good.png") no-repeat;
+  cursor: pointer;
+}
+
+.replyBtn_good:hover {}
+
+.replyBtn_bad {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: url("/images/shop/bad.png") no-repeat;
+  cursor: pointer;
+}
+
+.replyBtn_bad:hover {}
+
+
+.replyDeleteBtn {
+  padding: 5px;
+  width: 25px;
+  height: 25px;
+  box-sizing: border-box;
+  background: url("/images/shop/replyDelete.png") no-repeat;
+  border: 0;
+  background-size: cover;
+}
+
+
+.replyGoodtd {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+#replyBtnNo {
+  padding: 10px 20px;
+  background-color: #ccc;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+
+/*댓글리스트*/
+.tData {}
+
+.tData .reply456 {
+  border-bottom: 1px solid #ccc;
+}
+
+.tData .reply456 .replyTop {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+
+}
+
+.replyTop-left {
+  display: flex;
+  gap: 10px;
+}
+
+.replyTop-left li:nth-child(3) {
+  font-weight: bold;
+}
+
+.replyTop-left li:nth-child(4) {
+  color: #888;
+  font-size: 13px;
+}
+
+.replyTop-right {
+  display: flex;
+}
+
+.tData .reply456 .replyDown {
+  padding: 10px
+}
+
+.replyProfile {
+  background: url("/images/shop/replyProfile.png") no-repeat;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  background-size: cover;
+}
+
+
+
+/*비로그인*/

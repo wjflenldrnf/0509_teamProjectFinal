@@ -1,0 +1,162 @@
+@import url(/css/common/reset.css);
+@import url(/css/common/header.css);
+@import url(/css/common/footer.css);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+
+
+
+.cart .cart-con{
+  flex-basis:1400px;
+  min-height: calc( 100vh - 70px - 150px ) ;
+  display:flex;
+  justify-content:center;
+  align-items: flex-start;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  width: 90%;
+  margin: 20px auto;
+   font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    width:100%;
+}
+
+.cart {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.cart table {
+  width: 100%;
+  border-collapse: collapse;
+   table-layout:fixed;
+   border:1px solid #cccccc;
+}
+
+.cart th, .cart td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.cart th {
+  background-color: #a2dfe6;
+}
+
+.cart img {
+  width: 100px;
+  height: 100px;
+}
+.cartDeleteImg img{
+    width:30px;
+    height:30px;
+}
+
+.cart .title {
+  color: #007bff;
+}
+
+
+.cart .cart-con table tbody tr td input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.cartDelete{
+  cursor:pointer;
+ border:0;
+ background-color: #ffffff;
+}
+
+
+/* 구매 */
+
+.down{
+position: sticky;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.pur{
+  width:100%;
+  height:80px;
+  border-top:1px solid #ccc;
+  display:flex;
+  justify-content:space-between;
+}
+
+.pur .pur-left{
+  width:50%;
+  background-color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  color: #007bff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  line-height:30px;
+}
+.pur-left li:nth-child(1){
+}
+.pur-left li:nth-child(2){
+
+}
+
+
+.buyBtn{
+  width:50%;
+  height:inherit;
+  border:0;
+  font-weight:bold;
+  font-size: 30px;
+  background-color:#a2dfe6;
+  color:#ffffff;
+  cursor : pointer;
+}
+
+.buttonCap{
+width:100%;
+height:80px;
+display:flex;
+
+}
+.menu{
+width:33%;
+background-color: #282828;
+}
+.menu:hover{
+cursor : pointer;
+}
+.home{
+width:33%;
+background-color: #282828;
+}
+.home:hover{
+cursor : pointer;
+}
+.back{
+width:34%;
+background-color: #282828;
+}
+.back:hover{
+cursor : pointer;
+}
+
+.buttonCap img{
+filter: invert(100%) sepia(1%) saturate(7477%) hue-rotate(157deg) brightness(99%) contrast(113%);
+}
+
+
+
+

@@ -1,0 +1,182 @@
+@import url(/css/common/reset.css);
+@import url(/css/common/header.css);
+@import url(/css/common/footer.css);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.container {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  width: 100%;
+}
+
+.name{
+display:flex;
+justify-content:center;
+padding:10px;
+border-bottom:1px solid #ccc;
+
+}
+.name h1{
+text-align:center;
+display:flex;
+align-items:center;
+justify-content:center;
+width:200px;
+height:60px;
+background-color: #a2dfe6;
+border-radius: 5px;
+color: #ffffff;
+font-size:25px;
+}
+
+.detail {
+  list-style-type: none;
+  background-color: aliceblue;
+  width: 100%;
+  min-height: calc(100vh - 70px - 150px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail .detail-con {
+  background-color: #ffffff;
+  flex-basis: 1208px;
+  min-height: calc(100vh - 70px - 150px);
+  border: 1px solid #cccccc;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+/*top*/
+.detail .detail-con .top {
+  width: 100%;
+  height: auto;
+  padding:10px;
+}
+
+/*left*/
+.left {}
+
+.left .left-con {
+  display: flex;
+  justify-content: center;
+}
+
+.left .left-con img {
+  width: 500px;
+  height: 350px;
+}
+
+/*right*/
+.right {
+  flex: 1;
+}
+
+.right label {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.right ul {
+  padding: 10px;
+  line-height: 38px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 5px;
+}
+
+.right ul>li {
+  border: 1px solid #ccc;
+  width: auto;
+  gap: 7px;
+  padding: 10px;
+  display: flex;
+}
+
+.right ul>li:nth-child(1) {
+  border: 0;
+}
+
+.right ul>li:nth-child(2) {
+  border: 0;
+}
+
+.right ul>li:nth-child(5) {}
+
+.right ul>li textarea {
+  border: 1px solid #ccc;
+  resize: none;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  padding:5px;
+}
+
+.content {
+  flex-direction: column;
+}
+
+.right input {
+  display: flex;
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.right select {
+  border: 1px solid #ccc;
+}
+
+.update {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  gap: 10px;
+}
+
+.update input {
+  border: 1px solid #ccc;
+}
+
+.update a {
+  border: 1px solid #ccc;
+
+}
+
+.detail .detail-con .right ul>li.address {}
+
+.detail .detail-con .right ul>li.address input {
+
+  padding: 5px 10px;
+  box-sizing: border-box;
+}
+
+.detail .detail-con .right ul>li.address.one {
+
+  display: flex !important;
+  justify-content: flex-start !important;
+
+
+}
+
+.detail .detail-con .right ul>li.address.one input {
+  flex:0;
+}
+
+.detail .detail-con .right ul>li.address.two {}
+
+.detail .detail-con .right ul>li.address.two {
+
+  display: flex !important;
+  justify-content: flex-start !important;
+}
+
+.file{
+display:flex;
+justify-content:center;
+}

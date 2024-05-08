@@ -1,0 +1,281 @@
+@import url(/css/common/reset.css);
+@import url(/css/common/footer.css);
+@import url(/css/common/header.css);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+
+.container {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  width: 100%;
+  height: auto;
+  background-color: #fefefe;
+}
+
+
+.container .shopList {
+  width: 100%;
+  /* height: calc( 100vh - 70px - 150px ); */
+
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+
+}
+
+.container .shopList .shopList-con {
+
+  flex-basis: 1400px;
+
+  /* width:100%; */
+
+  min-height: calc(100vh - 70px - 150px);
+
+  /* display: flex; */
+
+  /* justify-content: center; */
+
+  align-items: flex-start;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  /* border: 1px solid; */
+
+  /* min-height: calc( 100vh - 70px - 150px); */
+
+padding: 20px;
+
+box-sizing: border-box;
+
+/* border: 1px solid; */
+
+/* min-height: calc( 100vh - 70px - 150px); */
+
+/* overflow: scroll; */
+}
+
+
+.container .shopList .shopList-con .top1 {
+  background-color: #f1f1f1;
+  width: 100%;
+  height: auto;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.container .shopList .shopList-con .top1 h1 {
+  background-color: #a2dfe6;
+  color: aliceblue;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+
+}
+
+.container .shopList .shopList-con .search {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px 25px 15px 5px;
+  box-sizing: border-box;
+  /* border-bottom: 1px solid #555555; */
+  border-bottom: 10px solid #f1f1f1;
+  border-right: 2px solid #cccccc;
+}
+
+.shopList .shopList-con .grid {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.shopList .shopList-con .grid>ul {
+  /* width: 100%; */
+  /* border: 1px solid #ff0000; */
+  display: grid;
+  /* grid-template-columns: repeat(4,1fr); */
+  grid-template-rows: repeat(2, 180px);
+  grid-auto-rows: 180px;
+  gap: 10px;
+}
+
+.shopList .shopList-con .grid>ul>li {
+  border-bottom: 2px solid #cccccc;
+  border-right: 2px solid #cccccc;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  height: auto;
+  background-color: #ffffff;
+  gap:10px;
+}
+
+.shopList .shopList-con .grid>ul>li .top {
+  width: 100%;
+  height: 150px;
+  box-sizing: border-box;
+  flex: 1;
+  /* padding: 10px; */
+  /* justify-content: center; */
+}
+
+.shopList .shopList-con .grid>ul>li .top img {
+  height: 150px;
+  width: 150px;
+  display: block;
+  padding: 10px;
+}
+
+
+.shopList .shopList-con .grid>ul>li .bottom {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  flex: 6;
+  box-sizing: border-box;
+}
+
+.bottom-ul{
+display:flex;
+justify-content:space-between;
+line-height:40px;
+}
+
+.bottom-ul .bottom-left{
+display:flex;
+flex-direction: column;
+}
+/*
+.bottom-left li:nth-child(1){
+font-size:20px;
+font-weight:bold;
+width:800px;
+}
+.bottom-left li:nth-child(2){
+
+}
+.bottom-left li:nth-child(3) span{
+font-size:30px;
+font-weight:bold;
+}
+*/
+
+
+.bottom-ul .bottom-right{
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+}
+
+
+.shopList .shopList-con .grid>ul>li .bottom>ul>li {
+  /* height: 20px; */
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  background-color: #f1f1f1;
+  padding: 2px;
+}
+
+.shopList .shopList-con .grid>ul>li .bottom>ul>li span:nth-child(1) {
+
+flex: 1;
+}
+
+.shopList .shopList-con .grid>ul>li .bottom>ul>li span:nth-child(2) {
+  flex: 5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*íŽ˜ì´ì§• */
+.pagingList .pagingList-con .paging {
+  padding: 10px 0;
+  box-sizing: border-box;
+  background-color: #fefefe;
+  display: flex;
+  justify-content: center;
+}
+
+.pagingList .pagingList-con .paging>ul {
+  flex-basis: 400px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.pagingList .pagingList-con .paging>ul>li {
+  /* flex:1;*/
+  background-color: #58cc0000;
+}
+
+.pagingList .pagingList-con .paging>ul>li.block {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.pagingList .pagingList-con .paging>ul>li.block a {
+  color: #ffffff;
+  font-weight: bold;
+  background-color: #d8d8d8;
+  padding: 0 10px;
+  display: block;
+}
+
+.pagingList .pagingList-con .paging>ul>li span {
+  font-size: 12px;
+}
+
+.pagingList .pagingList-con .paging>ul>li a {
+
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.pagingList .pagingList-con .paging>ul>li span.span0 {
+  background-color: #d8d8d8;
+  color: #000000;
+  padding: 2px 10px;
+  border-radius: 5px;
+}
+
+.pagingList .pagingList-con .paging>ul>li span a.span1 {
+  padding: 2px 10px;
+  background-color: #d8d8d8;
+  color: #000000;
+}
+
+span.now {
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: #000000;
+  padding: 0 10px;
+  position: relative;
+  cursor: pointer;
+}

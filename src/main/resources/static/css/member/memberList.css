@@ -1,0 +1,206 @@
+@import url(../common/reset.css);
+@import url(../common/header.css);
+
+@import url(../common/footer.css);
+
+table,
+th,
+td {
+  border-collapse: collapse;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(255 255 255);
+  border-image: initial;
+}
+
+.container {
+  width: 100%;
+  height: auto;
+  background-color: #fefefe;
+}
+
+.container .memberList {
+  width: 100%;
+  /*background:url(/images/index.jpg) no-repeat 50%/cover;*/
+  /*filter: grayscale(100%);*/
+
+  display: flex;
+  justify-content: center;
+}
+
+.container .memberList .memberList-con {
+
+  /*
+width:100%;
+height:calc(100vh);
+*/
+
+
+  flex-basis: 1400px;
+  min-height: calc(100vh - 70px - 150px);
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 20px;
+  box-sizing: border-box;
+
+}
+
+.memberList .memberList-con .top {
+  background-color: #f1f1f1;
+  width: 100%;
+  height: auto;
+  padding: 15px;
+}
+
+.memberList .memberList-con .top h1.title {
+  background-color: #a2dfe6;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+
+
+.memberList .memberList-con .top .search {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: flex-end;
+
+  /*padding: 5px;*/
+  padding: 15px 25px 15px 5px;
+  box-sizing: border-box;
+  gap: 3px;
+}
+
+.memberList .memberList-con .top table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+
+.memberList .memberList-con .top table th {
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+
+.memberList .memberList-con .top table td {
+  padding: 2px;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 10px 5px 10px 5px;
+  font-size: 12px;
+}
+
+.memberList .memberList-con .top table td.email {
+  width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.memberList .memberList-con .top table td.userPw {
+  width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.memberList .memberList-con .top table td.createTime {
+  width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.memberList .memberList-con .top table td.updateTime {
+  width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+*/
+
+
+
+
+
+
+/*페이징~~~~~~*/
+.pagingList .pagingList-con .paging {
+  padding: 10px 0;
+  box-sizing: border-box;
+  background-color: #fefefe;
+  display: flex;
+  justify-content: center;
+}
+
+.pagingList .pagingList-con .paging>ul {
+  flex-basis: 400px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.pagingList .pagingList-con .paging>ul>li {
+  /* flex:1;*/
+  background-color: #58cc0000;
+}
+
+.pagingList .pagingList-con .paging>ul>li.block {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.pagingList .pagingList-con .paging>ul>li.block a {
+  color: #ffffff;
+  font-weight: bold;
+  background-color: #d8d8d8;
+  padding: 0 10px;
+  display: block;
+}
+
+.pagingList .pagingList-con .paging>ul>li span {
+  font-size: 12px;
+}
+
+.pagingList .pagingList-con .paging>ul>li a {
+
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.pagingList .pagingList-con .paging>ul>li span.span0 {
+  background-color: #d8d8d8;
+  color: #000000;
+  padding: 2px 10px;
+  border-radius: 5px;
+}
+
+.pagingList .pagingList-con .paging>ul>li span a.span1 {
+  padding: 2px 10px;
+  background-color: #d8d8d8;
+  color: #000000;
+}
+
+span.now {
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: #000000;
+  padding: 0 10px;
+  position: relative;
+  cursor: pointer;
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+>
+<div class="container" th:fragment="shopDetailFragment">
+    <form th:action="@{/shop/update}" method="post" enctype="multipart/form-data">
+        <div class="detail">
+            <div class="detail-con">
+            <div class="name">
+                <h1>상품 수정</h1>
+            </div>
+                <div class="top">
+                    <div class="left">
+                        <div class="left-con">
+                            <th:block th:if="${shop.isImage==1}"> <!--  이미지 표시 -->
+                                <img th:src="@{|/upload/${shop.newFileName}|}" alt="이미지대체문구">
+                            </th:block>
+                            <th:block th:unless="${shop.isImage==1}">  <!--  이미지 표시 -->
+                                <img src="https://placehold.co/400x500?text=NOIMAGE" alt="이미지대체문구">
+                            </th:block>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <ul>
+                            <li>
+                                <input type="hidden" name="id" id="id" th:value="${shop.id}">
+                            </li>
+                            <li>
+                                <input type="hidden" id="memberId" name="memberId"
+                                       th:value="${shop.shopMemberEntity.id}">
+                            </li>
+                            <li>
+                                <label for="title">제목</label>
+                                <input type="text" name="title" id="title" th:value="${shop.title}">
+                            </li>
+
+                            <li>
+                                <label for="place">지역</label>
+                                <select name="place" id="place">
+                                    <option value="">::지역::</option>
+                                    <option value="아시아">아시아</option>
+                                    <option value="미국">미국</option>
+                                    <option value="유럽">유럽</option>
+                                    <option value="아프리카">아프리카</option>
+                                    <option value="기타">기타</option>
+                                </select>
+                            </li>
+                            <li>
+                                <label for="price">가격</label>
+                                <input type="text" name="price" id="price" th:value="${shop.price}">
+                            </li>
+
+                            <li>
+                                <label for="address">주소</label>
+                            <li class="address one">
+                                <input type="text" id="postcode" placeholder="우편번호">
+                                <input type="button" onclick="execDaumPostcode()" value="우편번호 찾기">
+                            </li>
+                            <li class="address two">
+                                <input type="text" id="mainAddress" placeholder="주소">
+                                <input type="text" id="detailAddress" placeholder="상세주소">
+                                <input type="text" id="extraAddress" placeholder="참고항목">
+                            </li>
+                            </li>
+                            <li>
+                                <label for="address">↳</label>
+                                <input type="text" name="address" id="address" th:value="${shop.address}" readonly>
+                            </li>
+                            <li>
+                                <label for="hit">조회수</label>
+                                <input type="text" name="hit" id="hit" th:value="${shop.hit}" disabled>
+                            </li>
+                            <li>
+                                <label for="createTime">등록일</label>
+                                <span th:text="${#temporals.format(shop.createTime, 'yyyy년-MM월-dd일 HH시:mm분')}"
+                                      id="createTime"></span>
+                            </li>
+
+                            <li class="content">
+                                <label for="content">내용입력</label>
+                                <textarea cols="60" rows="20" id="content" name="content"
+                                          th:text="${shop.content}"></textarea>
+                            </li>
+                        </ul>
+                        <div class="file">
+                            <li>
+                                <input type="file" name="shopFile" id="shopFile">
+                            </li>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="update">
+                    <input type="submit" value="수정하기">
+                    <a th:href="@{/shop/delete/{id}(id=${shop.id})}">글삭제</a>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</div>
+</html>

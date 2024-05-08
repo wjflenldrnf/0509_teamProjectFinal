@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<div class="header" th:fragment="adminHeaderFragment">
+    <div class="nav">
+        <div class="left-menu">
+            <h1 class="logo"><a th:href="@{/index}"><img th:src="@{/images/logo.png}" alt="logo"></a></h1>
+        </div>
+        <div class="right-menu">
+            <ul>
+                <th:block sec:authorize="isAnonymous()"><!-- 비로그인시 -->
+                    <li><a th:href="@{/member/login}">로그인</a></li>
+                    <li><a th:href="@{/member/join}">회원가입</a></li>
+                </th:block>
+
+
+                <th:block sec:authorize="isAuthenticated()"><!-- 로그인 후 , 비로그인 일 때 X-->
+
+                    <th:block sec:authroize="hasAnyRole('ADMIN','MANAGER')">  <!--관리자 , 매니저만-->
+                        <li class="home"><a th:href="@{/}">
+                            <img style="margin-top:19px;" src="/images/admin/home.png" alt="logout" height="20"
+                                 width="20"></a>
+                        </li>
+                        <li><a th:href="@{/shop/write}">상품등록</a></li>
+                        <li>
+                            <a th:href="@{/member/detail/}" th:text="${#authentication.principal.username}"></a>
+                        </li>
+                        <li>
+                            <th:block th:each="role: ${#authentication.principal.authorities}">
+                                <span th:text="${role.authority}"></span>
+                            </th:block>
+                        </li>
+                        <li style="color:red;"><a th:href="@{/member/logout}">Logout
+                            <img src="/images/admin/enter.png" alt="logout" height="20" width="20"></a>
+                        </li>
+
+
+                    </th:block>
+
+                </th:block>
+
+            </ul>
+
+
+        </div>
+
+    </div>
+
+</div>
+</html>

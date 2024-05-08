@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+>
+<head>
+  <meta charset="UTF-8">
+  <title>글상세</title>
+  <link rel="stylesheet" th:href="@{/css/shop/detail.css}">
+</head>
+<body>
+<div th:replace="~{/fragments/common/header :: headerFragment}"></div>
+
+<h1>cart</h1>
+
+<div class="bottom">
+  <div class="reply">
+    <div class="reply-con">
+
+<!--                              <table>-->
+<!--                                  <thead>-->
+<!--                                  <tr>-->
+<!--                                      <th>장바구니번호</th>-->
+<!--                                      <th>상품번호</th>-->
+<!--                                      <th>상품번호</th>-->
+<!--                                      <th>수량</th>-->
+<!--                                  </tr>-->
+<!--                                  </thead>-->
+<!--                                  <tbody>-->
+<!--                                  <tr th:each="cart: ${cartList}">-->
+<!--                                      <td th:text="${cart.id}"></td>-->
+<!--                                      <td th:text="${cart.shopEntity.id}"></td>-->
+<!--                                      <td th:text="${cart.cartEntity.id}"></td>-->
+<!--                                      <td th:text="${cart.count}"></td>-->
+
+<!--                                  </tr>-->
+<!--                                  </tbody>-->
+<!--                              </table>-->
+    </div>
+  </div>
+</div>
+
+
+
+
+<div th:replace="~{/fragments/common/footer :: footerFragment}"></div>
+</body>
+</html>
+

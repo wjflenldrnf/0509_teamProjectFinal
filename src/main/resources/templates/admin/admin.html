@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <title>admin</title>
+    <link rel="stylesheet" th:href="@{/css/admin/admin.css}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+<div th:replace="~{/admin/common/header :: adminHeaderFragment}"></div>
+
+<div class="container">
+    <div class="admin">
+        <div class="admin-con">
+            <div class="sections">
+                <div class="section sec1">
+
+                    <div class="menu">
+
+                        <label for="expand-menu"><div>메뉴</div></label>
+                        <input type="checkbox" id="expand-menu" name="expand-menu"  style="display:none">
+                        <ul>
+
+                            <li><a th:href="@{/member/memberList}"><div>회원목록</div></a></li>
+                            <li><a th:href="@{/shop/shopList}"><div>상품목록</div></a></li>
+                            <li><a th:href="@{/#}"><div>장바구니 목록</div></a></li>
+                            <li><a th:href="@{/#}"><div>구매내역</div></a></li>
+                            <li><a th:href="@{/#}"><div>추천목록</div></a></li>
+                            <li><a th:href="@{/#}"><div>설정</div></a></li>
+                            <li><a href="http://minsik0412.ncpworkplace.com">네이버워크스페이스</a></li>
+
+
+                        </ul>
+
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
