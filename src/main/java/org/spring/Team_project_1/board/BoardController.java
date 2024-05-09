@@ -13,16 +13,18 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/board")
+@SessionAttributes("hotList")
 public class BoardController {
 
     private final BoardService boardService;
 
     @GetMapping("/write")
-    public String write(Model model) {
+    public String write(Model model, @ModelAttribute("hotList") List<ShopDto> hotList) {
 
         model.addAttribute("boardDto", new BoardDto());
 
@@ -39,13 +41,15 @@ public class BoardController {
         boardService.write(boardDto);
         return "redirect:/board/pagingList";
     }
+
     @GetMapping("/boardList")
     public String boardList(@PageableDefault(page = 0, size = 8, sort = "id", direction = Sort.Direction.DESC) Pageable pageable,
-                            @RequestParam(name = "subject",required = false ) String subject,
-                            @RequestParam(name = "search" ,required = false) String search,
-                            Model model) {
+                            @RequestParam(name = "subject", required = false) String subject,
+                            @RequestParam(name = "search", required = false) String search,
+                            Model model, @ModelAttribute("hotList") List<ShopDto> hotList) {
 
-        Page<BoardDto> pagingList =boardService.boardSearchPagingList(pageable,subject,search);;
+        Page<BoardDto> pagingList = boardService.boardSearchPagingList(pageable, subject, search);
+        ;
 
         int totalPages = pagingList.getTotalPages();// 전체페이지
         int newPage = pagingList.getNumber();// 현재페이지
@@ -54,8 +58,8 @@ public class BoardController {
 
         int blockNum = 3;  // 브라우저에 표이는 페이지번호
         int startPage = (int) ((Math.floor(newPage / blockNum) * blockNum) + 1 <= totalPages
-            ? (Math.floor(newPage / blockNum) * blockNum) + 1
-            : totalPages
+                ? (Math.floor(newPage / blockNum) * blockNum) + 1
+                : totalPages
         );
         int endPage = (startPage + blockNum) - 1 < totalPages ? (startPage + blockNum) - 1 : totalPages;
 
@@ -70,7 +74,7 @@ public class BoardController {
 
     @GetMapping("/pagingList")
     public String pagingList(@PageableDefault(page = 0, size = 8, sort = "id", direction = Sort.Direction.DESC) Pageable pageable
-        , Model model) {
+            , Model model, @ModelAttribute("hotList") List<ShopDto> hotList) {
 
         Page<BoardDto> pagingList = boardService.pagingList(pageable);
 
@@ -81,8 +85,8 @@ public class BoardController {
 
         int blockNum = 3;  // 브라우저에 표이는 페이지번호
         int startPage = (int) ((Math.floor(newPage / blockNum) * blockNum) + 1 <= totalPages
-            ? (Math.floor(newPage / blockNum) * blockNum) + 1
-            : totalPages
+                ? (Math.floor(newPage / blockNum) * blockNum) + 1
+                : totalPages
         );
         int endPage = (startPage + blockNum) - 1 < totalPages ? (startPage + blockNum) - 1 : totalPages;
 
@@ -106,17 +110,15 @@ public class BoardController {
         boardService.deleteBoard(id);
         return "redirect:/board/pagingList";
     }
+
     @GetMapping("/detail/{id}")
-    public String detail(@PathVariable("id") Long id, Model model){
+    public String detail(@PathVariable("id") Long id, Model model, @ModelAttribute("hotList") List<ShopDto> hotList) {
         BoardDto board = boardService.boardOne(id);
-        if(board != null){
-            model.addAttribute("board" , board);
+        if (board != null) {
+            model.addAttribute("board", board);
         }
         return "board/detail";
     }
-
-
-
 
 
 }
