@@ -404,10 +404,10 @@ public class ShopService implements ShopServiceImpl {
     List<ShopDto> hotDto = hot.stream().map(
         ShopDto::toSelectShopList).collect(Collectors.toList());
 
-//        return hot.stream().map(
-//                ShopDto::toSelectShopList).collect(Collectors.toList());
     return hotDto;
   }
+
+
 //  @Override
 //  public List<ShopDto> shopList() {
 //

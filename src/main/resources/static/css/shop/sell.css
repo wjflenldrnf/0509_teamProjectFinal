@@ -469,6 +469,10 @@ content-right p {
   border: 0;
 }
 
+.map-con input.address {
+  background-color: transparent;
+}
+
 
 /*  reply */
 .reply-con {

@@ -6,9 +6,9 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver   # driver
-    url: jdbc:mysql://jmgrds.cpq8saaakf16.ap-northeast-2.rds.amazonaws.com/cicd1    # DB URL
-    username: "dgy6k"                                # user
-    password: "25414417"                   # password
+    url: jdbc:mysql://localhost:3306/team_project_1    # DB URL
+    username: root                                # user
+    password: 1234                                # password
 
   # JPA settings
   jpa:

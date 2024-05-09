@@ -15,14 +15,15 @@ import java.io.PrintWriter;
 public class CustomAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
 
     @Override
-    public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
+    public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
+                                        Authentication authentication) throws IOException, ServletException {
 
         response.setContentType("text/html; charset=utf-8");
 
         PrintWriter out = response.getWriter();
 
-        out.println("<script> alert('로그인 성공!" + authentication.getName() +" 님 반갑습니다.');" +
-                        "location.href='/';" +
+        out.println("<script> alert('로그인 성공!" + authentication.getName() + " 님 반갑습니다.');" +
+                "location.href='/';" +
                 "</script>");
 
         out.close();
