@@ -13,7 +13,7 @@
 - WebSocket
 
 ## 링크
-[https://github.com/](https://github.com/)
+https://github.com/wjflenldrnf/0509_teamProjectFinal.git
 
 ## 프로젝트 요약
 - 회원가입, 여행상품 목록
