@@ -24,6 +24,7 @@ https://github.com/wjflenldrnf/0509_teamProjectFinal.git
 ## 나의 역할
 - 회원가입 CRUD
 - 챗봇, 추천검색어 창
+  
 ![프레젠테이션1_나눔(한글나눔고딕)_9](https://github.com/wjflenldrnf/0616_codingstoryFinal/assets/154856783/42e15fd3-118f-49a1-8d5d-afceb6d4f4b1)
 ![프레젠테이션1_나눔(한글나눔고딕)_10](https://github.com/wjflenldrnf/0616_codingstoryFinal/assets/154856783/e08fb2b9-5e4c-4424-8d4c-e709b3daae8a)
 
@@ -33,6 +34,6 @@ https://github.com/wjflenldrnf/0509_teamProjectFinal.git
 
 
 
-##개발환경
+## 개발환경
 ![프레젠테이션1_나눔(한글나눔고딕)_13](https://github.com/wjflenldrnf/0616_codingstoryFinal/assets/154856783/29787af5-0934-445f-83f8-245e50e2c304)
 
