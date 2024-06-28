@@ -1,4 +1,4 @@
-![제목없음_8](https://github.com/wjflenldrnf/0509_teamProjectFinal/assets/154856783/95d2c8fe-f63a-4a9e-b941-e022bfffda2d)# 쇼핑몰 & 관리자모드 기반 챗봇 구현
+# 쇼핑몰 & 관리자모드 기반 챗봇 구현
 
 ## 프로젝트 기간
 2024.04.11 ~ 2024.05.05
