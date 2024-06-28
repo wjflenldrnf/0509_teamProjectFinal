@@ -37,7 +37,8 @@ https://github.com/wjflenldrnf/0509_teamProjectFinal.git
 
 
 ## ERD
-![프레젠테이션1_나눔(한글나눔고딕)_12](https://github.com/wjflenldrnf/0616_codingstoryFinal/assets/154856783/6ff8d945-5ef3-4406-8bda-50863c49aa37)
+![image](https://github.com/wjflenldrnf/0509_teamProjectFinal/assets/154856783/e379c5b1-b9f9-4c9a-b2d1-72ae305e4aeb)
+
 
 
 
