@@ -29,6 +29,13 @@ https://github.com/wjflenldrnf/0509_teamProjectFinal.git
 ![제목없음_8](https://github.com/wjflenldrnf/0509_teamProjectFinal/assets/154856783/3d02d668-11ef-4338-a946-78750171c1cb)
 
 
+## 시연 영상
+![1-ezgif com-video-to-gif-converter](https://github.com/wjflenldrnf/0509_teamProjectFinal/assets/154856783/0f6a2a66-35fd-475b-89d8-1c2883ed6a61)
+![2-ezgif com-video-to-gif-converter](https://github.com/wjflenldrnf/0509_teamProjectFinal/assets/154856783/4ab111b6-b62a-443c-80b3-a16eac6315cf)
+![3-ezgif com-video-to-gif-converter](https://github.com/wjflenldrnf/0509_teamProjectFinal/assets/154856783/447b50a0-4c2c-4604-a45a-c5e62f68c42b)
+
+
+
 ## ERD
 ![프레젠테이션1_나눔(한글나눔고딕)_12](https://github.com/wjflenldrnf/0616_codingstoryFinal/assets/154856783/6ff8d945-5ef3-4406-8bda-50863c49aa37)
 
