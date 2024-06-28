@@ -1,4 +1,4 @@
-# 쇼핑몰 & 관리자모드 기반 챗봇 구현
+![제목없음_8](https://github.com/wjflenldrnf/0509_teamProjectFinal/assets/154856783/95d2c8fe-f63a-4a9e-b941-e022bfffda2d)# 쇼핑몰 & 관리자모드 기반 챗봇 구현
 
 ## 프로젝트 기간
 2024.04.11 ~ 2024.05.05
@@ -25,8 +25,8 @@ https://github.com/wjflenldrnf/0509_teamProjectFinal.git
 - 회원가입 CRUD
 - 챗봇, 추천검색어 창
   
-![프레젠테이션1_나눔(한글나눔고딕)_9](https://github.com/wjflenldrnf/0616_codingstoryFinal/assets/154856783/42e15fd3-118f-49a1-8d5d-afceb6d4f4b1)
-![프레젠테이션1_나눔(한글나눔고딕)_10](https://github.com/wjflenldrnf/0616_codingstoryFinal/assets/154856783/e08fb2b9-5e4c-4424-8d4c-e709b3daae8a)
+![제목없음_7](https://github.com/wjflenldrnf/0509_teamProjectFinal/assets/154856783/338586fc-7b25-4d63-b358-647922adddac)
+![제목없음_8](https://github.com/wjflenldrnf/0509_teamProjectFinal/assets/154856783/3d02d668-11ef-4338-a946-78750171c1cb)
 
 
 ## ERD
